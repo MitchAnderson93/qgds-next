@@ -40,8 +40,8 @@ const copyComponent = (sourceDir, targetDir, componentName) => {
 };
 
 const selectAndCopyComponent = () => {
-  const sourceDirectory = path.join(__dirname, '../../node_modules/qhealthdesign-system/src/components/');
-  const targetDirectory = path.resolve(__dirname, '../../stories/src/components');
+  const sourceDirectory = path.join(__dirname, '../../.migrate/components/');
+  const targetDirectory = path.resolve(__dirname, '../../src/components');
 
   fs.readdir(sourceDirectory, (err, components) => {
     if (err) {

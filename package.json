@@ -8,7 +8,7 @@
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "compile": "webpack --config .migrate/webpack-build.js",
-    "postinstall": "node .migrate/utilities/moveDir.js",
+    "postinstall": "node .migrate/utilities/moveDir.js && npm run compile",
     "move-component": "node .migrate/utilities/moveComponent.js"
   },
   "keywords": [],
@@ -25,7 +25,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
     "mini-css-extract-plugin": "^2.8.0",
-    "qhealthdesign-system": "MitchAnderson93/design-system",
+    "qhealthdesign-system": "Qld-Health-Online-Team/design-system",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.70.0",

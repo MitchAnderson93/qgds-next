@@ -42,8 +42,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new PrecompilePlugin({
-            'input': './src/components/**/**/*.hbs',
-            'manifest':'./src/components/**/js/manifest.json',
+            'input': '../components/**/**/*.hbs',
+            'manifest':'./components/**/js/manifest.json',
             'output': '../dist/',
             'helpersInput': './helpers/Handlebars/*.js',
             'helpersOutput': './helpers/Handlebars/*.js'

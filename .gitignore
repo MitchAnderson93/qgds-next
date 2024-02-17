@@ -3,3 +3,4 @@ package-lock.json
 .migrate/helpers/
 .migrate/src/
 .migrate/styles/
+.migrate/components/

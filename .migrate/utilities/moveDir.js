@@ -27,8 +27,8 @@ const moveSrcDirectory = () => {
       destinationPath: path.join(__dirname, '../helpers')
     },
     {
-      sourcePath: path.join(__dirname, '../../node_modules/qhealthdesign-system/src'),
-      destinationPath: path.join(__dirname, '../src')
+      sourcePath: path.join(__dirname, '../../node_modules/qhealthdesign-system/src/components'),
+      destinationPath: path.join(__dirname, '../components')
     }
   ];
 
