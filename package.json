@@ -8,7 +8,7 @@
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "compile": "webpack --config .migrate/webpack-build.js",
-    "migrate": "rm -rf node_modules && npm i && node .migrate/utilities/moveDir.js",
+    "postinstall": "node .migrate/utilities/moveDir.js",
     "move-component": "node .migrate/utilities/moveComponent.js"
   },
   "keywords": [],
