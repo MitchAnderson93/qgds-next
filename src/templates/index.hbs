@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>
+        <html class="no-js lt-ie8 lt-ie9" lang="en">
+    <![endif]-->
+<!--[if IE 8]>
+        <html class="no-js lt-ie9 ie8" lang="en">
+    <![endif]-->
+<!--[if IE 9]>
+        <html class="no-js ie9" lang="en">
+    <![endif]-->
+<!--[if !(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <title>Queensland Design System - Storybook example</title>
+    {{> header/header_scripts }}
+</head>
+<body class="qld__grid">
+    {{> header/component }}
+    <!-- MAIN BODY -->
+    <main class="main" role="main">
+        <section class="qld__body qld__body--breadcrumb">
+            <div class="container-fluid"></div>
+        </section>
+        <!--CONTENT-->
+        <div class="qld__body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-lg-3"></div>
+                    <div class="col-xs-12 col-md-8 col-lg-9" id="content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- END MAIN BODY -->
+    {{> footer/footer_scripts }}
+</body>
+</html>

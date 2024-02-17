@@ -1,0 +1,5 @@
+/* variables.css for Storybook UI overrides */
+:root {
+    --primary-color: #4B32C3;
+    --background-color: #f8f9fa;
+}  
