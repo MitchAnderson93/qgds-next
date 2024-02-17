@@ -1,6 +1,6 @@
 # Storybook migration
 
-Welcome to the documentation for the [X], a frontend toolkit of styles, patterns, standards and guidance for everyone creating distinctly QLD digital products and services. 
+Welcome to the documentation for the [X], a frontend toolkit of styles, patterns, standards and guidance for everyone creating distinctly [X] digital products and services. 
 
 It helps us create unified, trusted, inclusive and audience centered digital experiences for our users that are clearly simple, current and purposeful.  
   
