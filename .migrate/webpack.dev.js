@@ -24,7 +24,9 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
+                    "postcss-loader",
                     "sass-loader", 
+                    "import-glob-loader"
                 ]
             },
             {
@@ -44,7 +46,7 @@ module.exports = {
         new PrecompilePlugin({
             'input': '../components/**/**/*.hbs',
             'manifest':'./components/**/js/manifest.json',
-            'output': '../dist/',
+            'output': '../dist/components/',
             'helpersInput': './helpers/Handlebars/*.js',
             'helpersOutput': './helpers/Handlebars/*.js'
         }),

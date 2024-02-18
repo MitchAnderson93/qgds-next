@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006",
-    "compile": "webpack --config .migrate/webpack-build.js",
-    "postinstall": "node .migrate/utilities/moveDir.js && npm run compile",
-    "move-component": "node .migrate/utilities/moveComponent.js"
+    "storybook": "npm run compile && storybook dev -p 6006",
+    "compile": "webpack --config .migrate/webpack.dev.js",
+    "setup": "node .migrate/utilities/moveDir.js && npm run compile",
+    "move-component": "node .migrate/utilities/moveComponent.js",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
   "author": "",
@@ -18,21 +19,26 @@
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
     "@storybook/addon-links": "^7.6.16",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/blocks": "^7.6.16",
     "@storybook/html": "^7.6.16",
     "@storybook/html-webpack5": "^7.6.16",
     "@storybook/test": "^7.6.16",
+    "autoprefixer": "^10.4.14",
     "clean-webpack-plugin": "^4.0.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
+    "handlebars": "^4.7.8",
+    "handlebars-loader": "^1.7.3",
+    "import-glob-loader": "^1.1.0",
     "mini-css-extract-plugin": "^2.8.0",
+    "postcss-loader": "^7.3.3",
     "qhealthdesign-system": "Qld-Health-Online-Team/design-system",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
     "storybook": "^7.6.16",
-    "webpack-cli": "^5.1.4",
-    "handlebars": "^4.7.8",
-    "handlebars-loader": "^1.7.3"
+    "style-loader": "^3.3.4",
+    "webpack-cli": "^5.1.4"
   }
 }

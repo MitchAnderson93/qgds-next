@@ -4,12 +4,16 @@
 // path
 const path = require('path');
 const config = {
-  staticDirs: ['../src/assets/', '../dist/'],
+  staticDirs: [
+    '../src/assets/', 
+    '../dist/'
+  ],
   stories: [
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
+    "@storybook/preset-scss",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -42,6 +46,13 @@ const config = {
         knownHelpers: ['ifCond'], 
         knownHelpersOnly: false, 
       },
+    });
+
+    // SCSS rule
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../.migrate/styles'),
     });
 
     // Return the customized webpack config

@@ -1,5 +1,5 @@
 import { addons } from '@storybook/manager-api';
-import qgdsTheme from '../../original/.storybook/qgdsTheme';
+import qgdsTheme from '../.storybook/qgdsTheme';
 
 addons.setConfig({
   theme: qgdsTheme,
