@@ -3,4 +3,4 @@ node_modules/
 .migrate/src/
 .migrate/styles/
 .migrate/components/
-.storybook-static/
+storybook-static/
