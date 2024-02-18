@@ -8,7 +8,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const PrecompilePlugin = require('./PrecompilePlugin');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: [
         './.migrate/styles/global.scss',
         './.migrate/main.js'
