@@ -9,7 +9,7 @@
     "compile": "webpack --config .migrate/webpack.dev.js",
     "setup": "node .migrate/utilities/moveDir.js && npm run compile",
     "move-component": "node .migrate/utilities/moveComponent.js",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build",    
     "deploy-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "@storybook/html-webpack5": "^7.6.16",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/test": "^7.6.16",
+    "@storybook/theming": "^7.6.16",
     "autoprefixer": "^10.4.14",
     "clean-webpack-plugin": "^4.0.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
