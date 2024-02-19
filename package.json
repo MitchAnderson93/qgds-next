@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-storybook": "storybook build",
     "storybook": "npm run compile && storybook dev -p 6006",
     "compile": "webpack --config .migrate/webpack.dev.js",
     "setup": "node .migrate/utilities/moveDir.js && npm run compile",
     "move-component": "node .migrate/utilities/moveComponent.js",
+    "build-storybook": "build-storybook -o storybook-static",
     "deploy-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
