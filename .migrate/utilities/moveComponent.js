@@ -8,20 +8,20 @@ const rl = readline.createInterface({
 });
 
 const createStoryFile = (componentName, targetDir) => {
-  const storyContent = `// ${componentName}.stories.js
-import ${componentName}Template from './html/component.hbs';
-import siteData from '../../data/site.json'; 
+  const storyContent = `
+    // ${componentName}.stories.js
+    import ${componentName}Template from './html/component.hbs';
+    import siteData from '../../data/site.json'; 
 
-export default {
-  title: 'Components/${componentName}',
-};
+    export default {
+      title: 'Components/${componentName}',
+    };
 
-const Template = (args) => ${componentName}Template(args);
-export const Default${componentName} = Template.bind({});
-Default${componentName}.args = {
-  site: siteData 
-};
-`;
+    const Template = (args) => ${componentName}Template(args);
+    export const Default${componentName} = Template.bind({});
+    Default${componentName}.args = {
+      site: siteData 
+    };`;
 
   const storyFilePath = path.join(targetDir, `${componentName}/${componentName}.stories.js`);
   fs.writeFileSync(storyFilePath, storyContent);

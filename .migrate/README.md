@@ -15,6 +15,8 @@ This configuration file is tailored for bundling and processing Queensland Healt
 ### Plugins
 1. **MiniCssExtractPlugin**: Extracts CSS into separate files. It supports on-demand-loading of CSS and SourceMaps.
 2. **CleanWebpackPlugin**: Cleans up the `dist` folder before building, ensuring that only used files are bundled.
+
+### (Removed but considered):
 3. **PrecompilePlugin**: This custom plugin is specifically designed for handling Handlebars templates. Here's what it does:
     - **Handlebars Template Processing**: It searches for all Handlebars template files (*.hbs) within a specified directory, precompiling them into JavaScript functions. This is essential for using these templates in a web environment.
     - **Handlebars Helpers Handling**: It locates and processes Handlebars helper functions. These are small JavaScript functions that extend Handlebars' templating capabilities. The plugin ensures these helpers are available within the templates.

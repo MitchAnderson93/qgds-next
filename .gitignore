@@ -4,3 +4,4 @@ node_modules/
 .migrate/styles/
 .migrate/components/
 storybook-static/
+src/assets/img/

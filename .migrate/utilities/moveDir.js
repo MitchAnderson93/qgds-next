@@ -1,22 +1,22 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const moveDirectory = (sourcePath, destinationPath) => {
+const copyDirectory = (sourcePath, destinationPath) => {
   // Check if source directory exists
   if (!fs.existsSync(sourcePath)) {
     console.error('Source directory does not exist:', sourcePath);
     return;
   }
-  fs.moveSync(sourcePath, destinationPath, { overwrite: true }, (err) => {
-    if (err) {
-      console.error(`Error moving directory from ${sourcePath} to ${destinationPath}:`, err);
-    } else {
-      console.log(`Moved directory from ${sourcePath} to ${destinationPath}`);
-    }
-  });
+  
+  try {
+    fs.copySync(sourcePath, destinationPath, { overwrite: true });
+    console.log(`Copied directory from ${sourcePath} to ${destinationPath}`);
+  } catch (err) {
+    console.error(`Error copying directory from ${sourcePath} to ${destinationPath}:`, err);
+  }
 };
 
-const moveSrcDirectory = () => {
+const copySrcDirectory = () => {
   const directoriesToMove = [
     {
       sourcePath: path.join(__dirname, '../../node_modules/qhealthdesign-system/src/styles'),
@@ -29,13 +29,17 @@ const moveSrcDirectory = () => {
     {
       sourcePath: path.join(__dirname, '../../node_modules/qhealthdesign-system/src/components'),
       destinationPath: path.join(__dirname, '../components')
-    }
+    },
+    {
+      sourcePath: path.join(__dirname, '../../node_modules/qhealthdesign-system-full/src/assets/img'),
+      destinationPath: path.join(__dirname, '../../src/assets/img')
+    },
   ];
 
   directoriesToMove.forEach(({ sourcePath, destinationPath }) => {
-    moveDirectory(sourcePath, destinationPath);
+    copyDirectory(sourcePath, destinationPath);
   });
 };
 
-// Move src directory and then run webpack build
-moveSrcDirectory();
+// Copy src directory
+copySrcDirectory();

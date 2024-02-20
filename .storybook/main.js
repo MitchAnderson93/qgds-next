@@ -30,13 +30,11 @@ const config = {
     autodocs: "tag",
   },
   webpackFinal: async (config, { configType }) => {
-    
     // Add custom webpack configuration here
     config.module.rules.push({
       test: /\.custom\.js$/, // Example custom rule
       use: ['babel-loader'], // Example custom loader
     });
-
     // Add Handlebars loader rule
     config.module.rules.push({
       test: /\.hbs$/,
@@ -47,7 +45,6 @@ const config = {
         knownHelpersOnly: false, 
       },
     });
-
     // SCSS rule
     config.module.rules.push({
       test: /\.scss$/,
