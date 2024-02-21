@@ -1,5 +1,4 @@
 /** Let's style storybook */
-const withBodyWrapper = (storyFn) => `<body class="qld__grid">${storyFn()}</body>`;
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
@@ -12,7 +11,6 @@ const preview = {
       },
     },
   },
-  decorators: [withBodyWrapper],
 };
 
 export default preview;
