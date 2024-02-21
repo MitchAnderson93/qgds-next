@@ -44,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/main.min.css', // CSS output path
+            filename: 'css/main.css', 
         }),
         new CleanWebpackPlugin(),
     ],

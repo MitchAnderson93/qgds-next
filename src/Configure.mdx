@@ -1,9 +1,4 @@
 import { Meta } from "@storybook/blocks";
-
-import Styling from "./assets/styling.png";
-import Context from "./assets/context.png";
-import Assets from "./assets/assets.png";
-
 import { TaskTable } from "../.storybook/TaskTable.jsx";
 
 export const RightArrow = () => <svg 
@@ -40,49 +35,6 @@ export const RightArrow = () => <svg
       { name: 'Basic outputs', description: 'Setup basic minified files etc for output (/dist)', completed: "in progress" },
       { name: 'GH static hosting', description: 'Deploy to GitHub automatically', completed: "in progress" },
     ]} />
-</div>
-
-<div className="sb-container" style={{ marginTop: "3rem" }}>
-  <div className='sb-section-title'>
-    ### How to guides (working group)
-  </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Using components</h4>
-      <p className="sb-section-item-paragraph">Detailed guides for including QGDS components in your projects.</p>
-      <a
-        href="https://storybook.js.org/docs/web-components/configure/styling-and-css"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Contribution guide</h4>
-      <p className="sb-section-item-paragraph">We love community contributions. Learn how to contribute your work back to the QGDS and improve the design system.</p>
-      <a
-        href="https://storybook.js.org/docs/web-components/writing-stories/decorators#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Need help?</h4>
-        <p className="sb-section-item-paragraph">How to get help with your QGDS projects.</p>
-        <a
-          href="https://storybook.js.org/docs/web-components/configure/images-and-assets"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <style>

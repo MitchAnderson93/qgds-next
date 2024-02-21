@@ -48,7 +48,7 @@ const config = {
     // SCSS rule
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ['style-loader', 'postcss-loader', 'css-loader', 'sass-loader', 'import-glob-loader'],
       include: path.resolve(__dirname, '../.migrate/styles'),
     });
 

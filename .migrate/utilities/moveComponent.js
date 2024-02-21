@@ -18,8 +18,8 @@ const createStoryFile = (componentName, targetDir) => {
     };
 
     const Template = (args) => ${componentName}Template(args);
-    export const Default${componentName} = Template.bind({});
-    Default${componentName}.args = {
+    export const ${componentName} = Template.bind({});
+    ${componentName}.args = {
       site: siteData 
     };`;
 
