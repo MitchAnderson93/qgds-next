@@ -11,7 +11,8 @@ const createStoryFile = (componentName, targetDir) => {
   const storyContent = `
     // ${componentName}.stories.js
     import ${componentName}Template from './html/component.hbs';
-    import siteData from '../../data/site.json'; 
+    import site from './data/manifest.json'; 
+    import './js/index.js';
 
     export default {
       title: 'Components/${componentName}',
@@ -20,12 +21,24 @@ const createStoryFile = (componentName, targetDir) => {
     const Template = (args) => ${componentName}Template(args);
     export const ${componentName} = Template.bind({});
     ${componentName}.args = {
-      site: siteData 
+      current: site
     };`;
 
   const storyFilePath = path.join(targetDir, `${componentName}/${componentName}.stories.js`);
   fs.writeFileSync(storyFilePath, storyContent);
   console.log(`Created story file at ${storyFilePath}`);
+};
+
+const createBlankFiles = (componentPath) => {
+  // Create blank data.json in /data folder
+  const dataFilePath = path.join(componentPath, 'data/manifest.json');
+  fs.ensureFileSync(dataFilePath);
+  console.log(`Created blank data.json file at ${dataFilePath}`);
+
+  // Create blank index.js in /js folder
+  const indexJsPath = path.join(componentPath, 'js/index.js');
+  fs.ensureFileSync(indexJsPath);
+  console.log(`Created blank index.js file at ${indexJsPath}`);
 };
 
 const copyComponent = (sourceDir, targetDir, componentName) => {
@@ -39,6 +52,16 @@ const copyComponent = (sourceDir, targetDir, componentName) => {
 
   fs.copySync(sourcePath, destinationPath);
   console.log(`Copied component from ${sourcePath} to ${destinationPath}`);
+
+  createBlankFiles(destinationPath);
+
+  // Delete /component/js/global.js if it exists
+  const globalJsPath = path.join(destinationPath, 'js/global.js');
+  if (fs.existsSync(globalJsPath)) {
+    fs.removeSync(globalJsPath);
+    console.log(`Deleted global.js at ${globalJsPath}`);
+  }
+
   createStoryFile(componentName, targetDir);
 };
 

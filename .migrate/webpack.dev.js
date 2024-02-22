@@ -25,6 +25,7 @@ module.exports = {
                     "css-loader",
                     "postcss-loader",
                     "sass-loader",
+      
                     "import-glob-loader"
                 ]
             },
@@ -44,7 +45,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/main.css', 
+            filename: 'css/main.min.css', 
         }),
         new CleanWebpackPlugin(),
     ],

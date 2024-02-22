@@ -755,8 +755,8 @@
 	"children": [{
 		"asset_url": "/components.html",
 		"asset_assetid":"/components.html",
-		"asset_name": "Components &",
-		"asset_short_name": "Components &",
+		"asset_name": "Components",
+		"asset_short_name": "Components",
 		"asset_metadata_shortDescription": "This is level one short description",
 		"children": [{
 			"asset_url": "/components.html",
@@ -803,8 +803,8 @@
 	{
 		"asset_assetid": "/inner.html",
 		"asset_url": "/inner.html",
-		"asset_name": "Inner",
-		"asset_short_name": "Inner",
+		"asset_name": "Contact us",
+		"asset_short_name": "Contact us",
     	"children": []
   	}
 	]

@@ -1,0 +1,23 @@
+{
+    "current": {
+        "data": {
+            "metadata": {
+                "pageType": {
+                    "value": "landing"
+                }
+            }
+        },
+        "component": {
+            "data": {
+                "metadata": {
+                    "headingType": {
+                        "value": "some-heading-type"
+                    },
+                    "heading": {
+                        "value": "Section Heading"
+                    }
+                }
+            }
+        }
+    }
+}
