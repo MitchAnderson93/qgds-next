@@ -1,21 +1,23 @@
 {
-    "current": {
+    "top": {
+        "asset_name": "Top level",
+        "asset_url": "https://www.google.com"
+    },
+    "data": {
+        "metadata": {
+            "pageType": {
+                "value": "landing"
+            }
+        }
+    },
+    "component": {
         "data": {
             "metadata": {
-                "pageType": {
-                    "value": "landing"
-                }
-            }
-        },
-        "component": {
-            "data": {
-                "metadata": {
-                    "headingType": {
-                        "value": "some-heading-type"
-                    },
-                    "heading": {
-                        "value": "Section Heading"
-                    }
+                "headingType": {
+                    "value": "some-heading-type"
+                },
+                "heading": {
+                    "value": "Section Heading"
                 }
             }
         }

@@ -1,7 +1,7 @@
 // header.stories.js
-import siteData from '../data/site.json'; // Importing the JSON data
+import siteData from '../data/site.json'; 
 import pageTemplate from '../components/index.hbs';
-import '../../.storybook/previewStyles.css'; // Import custom CSS file
+import '../../.storybook/previewStyles.css'; 
 
 // Export default
 export default {
@@ -11,8 +11,8 @@ export default {
       hidden: true,
     },
   },
-  layout: 'fullscreen', // Optionally use fullscreen layout
-  previewClassName: 'custom-storybook-preview', // Custom class for the preview window
+  layout: 'fullscreen', 
+  previewClassName: 'custom-storybook-preview', 
 };
 
 const Template = (args) => pageTemplate(args);

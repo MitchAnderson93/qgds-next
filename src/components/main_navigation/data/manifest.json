@@ -9,7 +9,6 @@
 			"use_default": true,
 			"options": {
 				"qld__main-nav--dark": "Dark"
-
 			}
 		},
 		"mainNavHomeIconShow": {
@@ -64,6 +63,22 @@
 			"value": "Link 2",
 			"fieldid": "72410",
 			"type": "metadata_field_text ",
+			"is_contextable": true,
+			"default_value": false,
+			"use_default": true
+		},
+		"fontawesome": {
+			"value": "v5",
+			"fieldid": "72374",
+			"type": "metadata_field_select",
+			"is_contextable": true,
+			"default_value": false,
+			"use_default": true
+		},
+		"siteDefaultIcons": {
+			"value": "./img/svg-icons.svg",
+			"fieldid": "72372",
+			"type": "metadata_field_related_asset",
 			"is_contextable": true,
 			"default_value": false,
 			"use_default": true

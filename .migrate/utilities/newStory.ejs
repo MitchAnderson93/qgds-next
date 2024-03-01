@@ -1,0 +1,14 @@
+// <%= componentName %>.stories.js
+import <%= componentName %>Template from './html/component.hbs';
+import site from './data/manifest.json'; 
+import './js/index.js';
+
+export default {
+  title: 'Components/<%= componentName %>',
+};
+
+const Template = (args) => <%= componentName %>Template(args);
+export const <%= componentName %> = Template.bind({});
+<%= componentName %>.args = {
+  current: site
+};

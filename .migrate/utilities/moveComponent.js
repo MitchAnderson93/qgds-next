@@ -1,28 +1,33 @@
 const fs = require('fs-extra');
 const path = require('path');
 const readline = require('readline');
+const ejs = require('ejs'); // Ensure you have ejs installed via npm
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-const createStoryFile = (componentName, targetDir) => {
-  const storyContent = `
-    // ${componentName}.stories.js
-    import ${componentName}Template from './html/component.hbs';
-    import site from './data/manifest.json'; 
-    import './js/index.js';
+const createStoryFile = async (componentName, targetDir) => {
+  const templatePath = path.join(__dirname, './newStory.ejs');
+  const template = fs.readFileSync(templatePath, 'utf-8');
+  
+  // Adjust the path to manifest.json based on targetDir
+  const siteDataPath = path.join(targetDir, `${componentName}/data/manifest.json`);
+  
+  // Ensure you handle the case where manifest.json might not exist or be accessible
+  let siteData = {};
+  try {
+    siteData = require(siteDataPath);
+  } catch (error) {
+    console.error('Could not load site data from manifest.json:', error);
+  }
 
-    export default {
-      title: 'Components/${componentName}',
-    };
-
-    const Template = (args) => ${componentName}Template(args);
-    export const ${componentName} = Template.bind({});
-    ${componentName}.args = {
-      current: site
-    };`;
+  const storyContent = await ejs.render(template, {
+    componentName: componentName,
+    // Pass the loaded site data to the template
+    site: siteData
+  });
 
   const storyFilePath = path.join(targetDir, `${componentName}/${componentName}.stories.js`);
   fs.writeFileSync(storyFilePath, storyContent);
@@ -33,14 +38,15 @@ const createBlankFiles = (componentPath) => {
   // Create blank data.json in /data folder
   const dataFilePath = path.join(componentPath, 'data/manifest.json');
   fs.ensureFileSync(dataFilePath);
-  console.log(`Created blank data.json file at ${dataFilePath}`);
+  // Initialize manifest.json with an empty object
+  fs.writeFileSync(dataFilePath, JSON.stringify({}));
+  console.log(`Created blank data.json file at ${dataFilePath} with initial empty JSON content`);
 
   // Create blank index.js in /js folder
   const indexJsPath = path.join(componentPath, 'js/index.js');
   fs.ensureFileSync(indexJsPath);
   console.log(`Created blank index.js file at ${indexJsPath}`);
 };
-
 const copyComponent = (sourceDir, targetDir, componentName) => {
   const sourcePath = path.join(sourceDir, componentName);
   const destinationPath = path.join(targetDir, componentName);

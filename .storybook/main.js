@@ -41,7 +41,7 @@ const config = {
       loader: 'handlebars-loader',
       options: {
         helperDirs: path.resolve(__dirname, '../.migrate/helpers/Handlebars'), 
-        knownHelpers: ['ifCond'], 
+        knownHelpers: ['ifCond', 'ifAny', 'renderSpecialChar', 'itemAt'], 
         knownHelpersOnly: false, 
       },
     });
