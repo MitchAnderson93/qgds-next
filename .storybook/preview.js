@@ -1,6 +1,4 @@
 /** Let's style storybook */
-import './variables.css';
-import './theme.css';
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {

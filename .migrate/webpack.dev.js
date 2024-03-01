@@ -5,10 +5,9 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const PrecompilePlugin = require('./PrecompilePlugin');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: [
         './.migrate/styles/global.scss',
         './.migrate/main.js'
@@ -25,31 +24,29 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "postcss-loader",
-                    "sass-loader", 
+                    "sass-loader",
                     "import-glob-loader"
                 ]
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                }
+                test: /\.hbs$/,
+                use: [
+                    {
+                        'loader': 'handlebars-loader',
+                        'options': {
+                            helperDirs: path.resolve(__dirname, "../src/helpers/Handlebars")
+                        },
+                    }
+                ],
+                enforce: "post",
             }
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/main.min.css', // CSS output path
+            filename: 'css/main.min.css', 
         }),
         new CleanWebpackPlugin(),
-        new PrecompilePlugin({
-            'input': '../components/**/**/*.hbs',
-            'manifest':'./components/**/js/manifest.json',
-            'output': '../dist/components/',
-            'helpersInput': './helpers/Handlebars/*.js',
-            'helpersOutput': './helpers/Handlebars/*.js'
-        }),
     ],
     optimization: {
         minimize: true,

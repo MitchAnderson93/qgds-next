@@ -1,15 +1,16 @@
 {
   "name": "qgds-next",
   "version": "1.0.0",
-  "description": "",
+  "description": "Development",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "npm run compile && storybook dev -p 6006",
     "compile": "webpack --config .migrate/webpack.dev.js",
     "setup": "node .migrate/utilities/moveDir.js && npm run compile",
     "move-component": "node .migrate/utilities/moveComponent.js",
-    "build-storybook": "storybook build",    
+    "sync-colors": "node .migrate/figma.js",
+    "storybook": "npm run compile && storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "deploy-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
@@ -35,12 +36,14 @@
     "mini-css-extract-plugin": "^2.8.0",
     "postcss-loader": "^7.3.3",
     "qhealthdesign-system": "Qld-Health-Online-Team/design-system",
+    "qhealthdesign-system-full": "git+https://github.com/Qld-Health-Online-Team/design-system",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
     "storybook": "^7.6.16",
     "style-loader": "^3.3.4",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "jsonpath": "^1.1.1"
   }
 }

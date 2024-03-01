@@ -1,8 +1,5 @@
 import { Meta } from "@storybook/blocks";
-
-import Styling from "./assets/styling.png";
-import Context from "./assets/context.png";
-import Assets from "./assets/assets.png";
+import { TaskTable } from "../.storybook/TaskTable.jsx";
 
 export const RightArrow = () => <svg 
     viewBox="0 0 14 14" 
@@ -23,46 +20,21 @@ export const RightArrow = () => <svg
 <Meta title="Queensland Government Design System (core)" />
 
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Work in progress
+<div className='sb-section-title'>
+    ## Design system migration
   </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Using components</h4>
-      <p className="sb-section-item-paragraph">Detailed guides for including QGDS components in your projects.</p>
-      <a
-        href="https://storybook.js.org/docs/web-components/configure/styling-and-css"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Contribution guide</h4>
-      <p className="sb-section-item-paragraph">We love community contributions. Learn how to contribute your work back to the QGDS and improve the design system.</p>
-      <a
-        href="https://storybook.js.org/docs/web-components/writing-stories/decorators#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Need help?</h4>
-        <p className="sb-section-item-paragraph">How to get help with your QGDS projects.</p>
-        <a
-          href="https://storybook.js.org/docs/web-components/configure/images-and-assets"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
+</div>
+<div className="sb-container">
+ <div className='sb-section-title'>
+    ### Tasks in progress (MVP)
   </div>
+<TaskTable tasks={[
+      { name: 'Header', description: 'Moving over the basic header component', completed: "in progress" },
+      { name: 'Footer', description: 'Moving over the basic footer component', completed: "in progress" },
+      { name: 'Default page', description: 'Assemble basic page template', completed: "in progress" },
+      { name: 'Basic outputs', description: 'Setup basic minified files etc for output (/dist)', completed: "in progress" },
+      { name: 'GH static hosting', description: 'Deploy to GitHub automatically', completed: "in progress" },
+    ]} />
 </div>
 
 <style>
